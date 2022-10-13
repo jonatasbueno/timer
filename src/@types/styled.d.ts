@@ -10,5 +10,5 @@ type ThemeType = typeof defaultTheme
  * entretando acima importamos o próprio styled-components, com isso temos a sobrescrita apenas dos typos declarados
  */
 declare module 'styled-components' {
-  export interface DefaultTheme extends ThemeType { }
+  export interface DefaultTheme extends ThemeType {}
 }
