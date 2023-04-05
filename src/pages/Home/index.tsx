@@ -21,6 +21,7 @@ const newCycleFormValidationSchema = zod.object({
   minutesAmount: zod.number().min(1).max(60),
 })
 
+// inferindo tipos através do objeto gerado pelo zod.object
 type NewCycleFormData = zod.infer<typeof newCycleFormValidationSchema>
 
 export const Home = () => {

@@ -14,6 +14,7 @@ interface Cycle {
   finishedDate?: Date
 }
 
+// this interface has all methods and all properties, that will be used in the creacted context
 interface CycleContextType {
   cycles: Cycle[]
   activeCycle: Cycle | undefined
@@ -25,11 +26,13 @@ interface CycleContextType {
   createNewCycle: (data: CreateCycleData) => void
 }
 
-export const CycleContext = createContext({} as CycleContextType)
-
 interface CycleContextProviderProps {
   children: ReactNode
 }
+
+// createt context with object empty
+// using 'as' to type object
+export const CycleContext = createContext({} as CycleContextType)
 
 export function CycleContextProvider({ children }: CycleContextProviderProps) {
   const [cycles, setCycles] = useState<Cycle[]>([])
