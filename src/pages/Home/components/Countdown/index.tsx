@@ -27,7 +27,10 @@ export function Countdown() {
         /* setInterval não trabalha com precisão exata */
         const secondsDifference = differenceInSeconds(
           new Date(),
-          activeCycle.startDate,
+          /** 'new Date' tenta transformar o parametro em uma data,
+           * caso o parâmetro já seja uma data válida ele não será executado
+           */
+          new Date(activeCycle.startDate),
         )
 
         if (secondsDifference >= totalSeconds) {
