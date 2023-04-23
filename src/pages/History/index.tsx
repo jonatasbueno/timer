@@ -30,7 +30,9 @@ export const History = () => {
                 <td>{cycle.task}</td>
                 <td>{cycle.minutesAmount} minutos</td>
                 <td>
-                  {formatDistanceToNow(cycle.startDate, {
+                  {/* Devido o startDate poder vir do LocalStorage, ele pode estar no formato de 'string date'
+                  então é importante que a data seja paseada num 'object date' */}
+                  {formatDistanceToNow(new Date(cycle.startDate), {
                     addSuffix: true,
                     locale: ptBR,
                   })}
